@@ -1,0 +1,5 @@
+.idea/
+client/semantic/*
+!client/semantic/site/
+!client/semantic/custom.semantic.json
+!client/semantic/theme.config.import.less

@@ -1,0 +1,79 @@
+@venturesRed: #be2d1f;
+
+body:not(.dimmed) {
+  overflow-x: auto;
+}
+
+.ui.tab {
+  padding-top: 30px;
+}
+
+.ui.header {
+  margin-left: 8px;
+
+  > .title {
+    display: inline-block;
+  }
+}
+
+div[data-tab="users"] .headerWrap > .filter > .name {
+  max-width: 300px;
+}
+
+.headerWrap {
+  display: flex;
+
+  > .header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+  }
+
+  > .filter {
+    justify-content: flex-end;
+    width: 75%;
+
+    > .id {
+      max-width: 135px;
+    }
+  }
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+
+  > i {
+    margin-right: 0;
+  }
+}
+
+.successful.message, .failure.message {
+  display: none;
+}
+
+::selection, input::selection {
+  background-color: @venturesRed;
+  color: #f2f2f2;
+}
+
+::-moz-selection, input::-moz-selection {
+  background-color: @venturesRed;
+  color: #f2f2f2;
+}
+
+::-o-selection, input::-o-selection {
+  background-color: @venturesRed;
+  color: #f2f2f2;
+}
+
+::-ms-selection, input::-ms-selection {
+  background-color: @venturesRed;
+  color: #f2f2f2;
+}
+
+::-webkit-selection, input::-webkit-selection {
+  background-color: @venturesRed;
+  color: #f2f2f2;
+}

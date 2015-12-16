@@ -1,0 +1,9 @@
+<head>
+    <title>Widget Factory!</title>
+</head>
+<body>
+{{> toolbar}}
+{{#each tabs}}
+    {{> UI.dynamic template=this}}
+{{/each}}
+</body>

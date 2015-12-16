@@ -1,0 +1,73 @@
+<template name="tab">
+    <div class="ui tab" data-tab="{{name}}">
+        <div class="ui active dimmer">
+            <div class="ui large text loader">Loading</div>
+        </div>
+
+        <h2 class="ui header">
+            <div class="title">{{capitalize name}}</div>
+
+            {{#if equals name "widgets"}}
+                {{> add_edit_widget tab=tab}}
+            {{/if}}
+        </h2>
+
+        <table class="ui celled table">
+            <thead>
+            <tr>
+                {{#if equals name "widgets"}}<th></th>{{/if}}
+                {{#each cols}}
+                    <th>
+                        <div class="headerWrap">
+                            <div class="header">{{this.name}}</div>
+                            {{> filter}}
+                        </div>
+                    </th>
+                {{/each}}
+            </tr>
+            </thead>
+            <tbody>
+            {{#each rows}}
+                <tr>
+                    {{#if equals name "widgets"}}
+                        <td class="edit">
+                            <i class="widgets large red edit link icon"></i>
+                        </td>
+                    {{/if}}
+                    {{#each cols}}
+                        <td class={{this.data}}>
+                            {{#if equals this.type "image"}}
+                                <img class="ui bordered circular image" src="{{property .. this.data}}">
+                            {{else}}
+                                {{property .. this.data}}
+                            {{/if}}
+                        </td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<template name="filter">
+    {{#if equals type "boolean"}}
+        <div class="ui selection dropdown filter">
+            <input class="{{data}}" type="hidden">
+            <i class="dropdown icon"></i>
+            <div class="default text">Any</div>
+            <div class="menu">
+                <div class="item" data-value="">Any</div>
+                <div class="item" data-value="No">No</div>
+                <div class="item" data-value="Yes">Yes</div>
+            </div>
+        </div>
+    {{else}}
+        {{#unless equals this.type "image"}}
+            <div class="ui icon input filter">
+                <input class="{{data}}" type="{{type}}" min="{{min}}" placeholder="Search...">
+                <i class="search icon"></i>
+            </div>
+        {{/unless}}
+    {{/if}}
+</template>

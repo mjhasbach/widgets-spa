@@ -1,0 +1,25 @@
+{
+  "definitions": {
+    "api": true,
+    "site": true,
+    "reset": true,
+    "table": true,
+    "menu": true,
+    "icon": true,
+    "input": true,
+    "tab": true,
+    "dropdown": true,
+    "transition": true,
+    "dimmer": true,
+    "loader": true,
+    "image": true,
+    "modal": true,
+    "button": true,
+    "form": true,
+    "label": true,
+    "message": true
+  },
+  "themes": {
+    "default": true
+  }
+}

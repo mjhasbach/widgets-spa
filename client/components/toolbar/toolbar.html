@@ -1,0 +1,10 @@
+<template name="toolbar">
+    <div class="ui fixed pointing menu">
+        <a class="item users" data-tab="users">
+            <i class="users icon"></i> Users {{#if usersCount}}({{usersCount}}){{/if}}
+        </a>
+        <a class="item widgets" data-tab="widgets">
+            <i class="cubes icon"></i> Widgets {{#if widgetsCount}}({{widgetsCount}}){{/if}}
+        </a>
+    </div>
+</template>

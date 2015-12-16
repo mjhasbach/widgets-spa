@@ -1,0 +1,86 @@
+<template name="add_edit_widget">
+    <i class="add widget circle red link icon"></i>
+
+    <div class="ui modal">
+        <div class="header">
+            {{#if equals addEditMode "add"}}Add{{else}}Edit{{/if}} Widget
+        </div>
+        <div class="content">
+            <div class="description">
+                <form class="ui form">
+                    <input type="hidden" name="id">
+                    <div class="fields">
+                        <div class="eight wide field">
+                            <div class="field">
+                                <label>Name</label>
+                                <input type="text" name="name" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="eight wide field">
+                            <div class="field">
+                                <label>Color</label>
+                                <input type="text" name="color" placeholder="Color">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="six wide field">
+                            <div class="field">
+                                <label>Price</label>
+                                <input type="text" name="price" placeholder="Price">
+                            </div>
+                        </div>
+                        <div class="six wide field">
+                            <div class="field">
+                                <label>Inventory</label>
+                                <input type="number" name="inventory" placeholder="Inventory">
+                            </div>
+                        </div>
+                        <div class="four wide field">
+                            <div class="field">
+                                <label>Melts</label>
+                                <div class="ui selection dropdown">
+                                    <input type="hidden" name="melts">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Melts</div>
+                                    <div class="menu">
+                                        <div class="item" data-value="Yes">Yes</div>
+                                        <div class="item" data-value="No">No</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="ui green successful message">
+                    <i class="icon check"></i>
+                    Widget {{#if equals addEditMode "add"}}added{{else}}edited{{/if}} successfully!
+                </div>
+                <div class="ui red failure message">
+                    <i class="icon warning"></i>
+                    Unable to {{#if equals addEditMode "add"}}add{{else}}edit{{/if}} widget
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui animated green submitForm button">
+                <div class="visible content">Submit</div>
+                <div class="hidden content">
+                    <i class="upload icon"></i>
+                </div>
+            </div>
+            <div class="ui animated teal clearForm button">
+                <div class="visible content">Clear</div>
+                <div class="hidden content">
+                    <i class="erase icon"></i>
+                </div>
+            </div>
+            <div class="ui animated red deny button">
+                <div class="visible content">Close</div>
+                <div class="hidden content">
+                    <i class="remove icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
